@@ -96,7 +96,8 @@ app.use(express.urlencoded({
 // });
 
 global.client = new Client({
-  authStrategy: new LocalAuth()
+  authStrategy: new LocalAuth(),
+  puppeteer: { headless: true,args: ['--no-sandbox']},
 });
 
 client.initialize();

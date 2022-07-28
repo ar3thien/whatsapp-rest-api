@@ -258,7 +258,7 @@ app.post('/SendMessage', async (req, res) => {
   const NumberId = await (client.getNumberId(req.body.number));
   //console.log(NumberId);
   if (!NumberId) {
-    return res.status(400).json({ msg: 'Invalid number' });
+    res.status(400).json({ msg: 'Invalid number' });
   }
   // send the message
   client.sendMessage(NumberId._serialized, req.body.message);

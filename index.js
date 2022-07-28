@@ -263,7 +263,7 @@ app.post('/SendMessage', async (req, res) => {
   }
   // send the message
   client.sendMessage(NumberId._serialized, req.body.message);
-  res.status(200).json({ msg: 'Message sent!'});
+  return res.status(200).json({ msg: 'Message sent!'});
   } else { // if client not ready
     return res.status(222).json({ msg: 'Client is not ready yet!' });
   }

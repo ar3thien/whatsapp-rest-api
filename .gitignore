@@ -103,8 +103,9 @@ dist
 # TernJS port file
 .tern-port
 
-# WhatsApp session
+# WhatsApp data
 .wwebjs_auth
+last.qr
 
 # Node Modules
 node_modules

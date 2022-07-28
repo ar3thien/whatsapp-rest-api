@@ -221,8 +221,8 @@ app.get('/ClientState', async (req, res) => {
       res.status(200).json({ msg: ClientState });
     }
   } catch (err) {
-    res.status(222).json({ msg: 'Client not connected' });
     ClientReady = false;
+    res.status(222).json({ msg: 'Client not connected' });
   }
 });
 

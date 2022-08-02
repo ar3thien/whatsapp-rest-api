@@ -128,6 +128,7 @@ client.on("change_state", (reason) => {
 
 client.on("disconnected", (reason) => {
   console.log("disconnected: " + reason );
+  client.logout();
   process.exit();
 });
 

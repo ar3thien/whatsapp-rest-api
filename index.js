@@ -129,7 +129,7 @@ client.on("change_state", (reason) => {
 
 client.on("disconnected", (reason) => {
   console.log("Client is disconnected, cleaning the session directory, and exiting");
-  fs.rmSync(WS_SESSION_DIR, { recursive: true, force: true });
+  fs.rmdirSync(WS_SESSION_DIR, { recursive: true });
   process.exit();
 });
 

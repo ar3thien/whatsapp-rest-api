@@ -108,7 +108,7 @@ dist
 last.qr
 
 # tmp data
-.tmp/*
+tmp
 
 # Node Modules
 node_modules

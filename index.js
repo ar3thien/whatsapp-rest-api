@@ -123,7 +123,7 @@ client.on("auth_failure", () => {
 
 client.on("change_state", (reason) => {
   console.log("change_state Failed: " + reason );
-  process.exit();
+  //process.exit();
 });
 
 client.on("disconnected", (reason) => {

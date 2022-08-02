@@ -1,0 +1,6 @@
+# WhatsApp data
+.wwebjs_auth
+last.qr
+
+# Node Modules
+node_modules

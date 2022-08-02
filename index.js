@@ -121,6 +121,16 @@ client.on("auth_failure", () => {
   process.exit();
 });
 
+client.on("change_state", (reason) => {
+  console.log("change_state Failed: " + reason );
+  process.exit();
+});
+
+client.on("disconnected", (reason) => {
+  console.log("disconnected: " + reason );
+  process.exit();
+});
+
 // client.on("ready", () => {
 //   console.log("Client is ready!");
 // });

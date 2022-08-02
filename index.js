@@ -158,8 +158,13 @@ app.get('/LastQR', async (req, res) => {
     //console.log(data);
     res.status(200).json({ msg: LastQR });
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ msg: 'An error occured, please check the server logs' });
+    if (err.code === 'ENOENT') {
+      console.error(err);
+      res.status(500).json({ msg: 'last.qr file not found! Process exiting to force re-initialize' });
+    } else {
+      console.error(err);
+      res.status(500).json({ msg: 'An error occured, please check the server logs' });
+    }
   }}
 });
 

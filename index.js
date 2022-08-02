@@ -160,7 +160,7 @@ app.get('/LastQR', async (req, res) => {
   } catch (err) {
     if (err.code === 'ENOENT') {
       console.error(err);
-      res.status(500).json({ msg: 'File "last.qr" not found! Process exiting to force re-initialize' });
+      res.status(223).json({ msg: 'File "last.qr" not found! Process exiting to force re-initialize' });
       process.exit();
     } else {
       console.error(err);

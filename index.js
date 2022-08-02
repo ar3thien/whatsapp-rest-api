@@ -7,6 +7,7 @@ const app = express();
 const { Client, LocalAuth } = require('whatsapp-web.js');
 
 //variables declaration
+const WS_SESSION_DIR = '.wwebjs_auth';
 const QR_FILE_PATH = './last.qr';
 global.ClientReady = false;
 
@@ -127,8 +128,8 @@ client.on("change_state", (reason) => {
 });
 
 client.on("disconnected", (reason) => {
-  console.log("disconnected: " + reason );
-  client.logout();
+  console.log("Client is disconnected, cleaning the session directory, and exiting");
+  fs.rmSync(WS_SESSION_DIR, { recursive: true, force: true });
   process.exit();
 });
 

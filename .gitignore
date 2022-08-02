@@ -107,5 +107,8 @@ dist
 .wwebjs_auth
 last.qr
 
+# tmp data
+.tmp/
+
 # Node Modules
 node_modules

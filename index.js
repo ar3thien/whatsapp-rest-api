@@ -1,6 +1,7 @@
 // dependencies declaration
 //const qrcode = require('qrcode-terminal');
 const fs = require("fs");
+const fse = require("fs-extra");
 const express = require('express');
 const app = express();
 //const { body, validationResult } = require('express-validator');
@@ -129,7 +130,7 @@ client.on("change_state", (reason) => {
 
 client.on("disconnected", (reason) => {
   console.log("Client is disconnected, cleaning the session directory, and exiting");
-  fs.rmdir(WS_SESSION_DIR, { recursive: true });
+  fse.removeSync(WS_SESSION_DIR);
   process.exit();
 });
 

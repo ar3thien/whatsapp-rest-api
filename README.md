@@ -38,7 +38,7 @@ A document following the OpenAPI Specification (OAS) 3.0 is going to be availabl
 # Orchestration
 
 You may use wrappers (ie, shell scripts) or external tools (ie. [n8n](https://n8n.io/), [nodered](https://nodered.org/)) to build your logic on top of the Restful API.
-Because I personally use n8n, you will find under the n8n folder some workflow samples.
+Because I use n8n in my homelab, you will find under the n8n folder some workflow samples.
 
 # Support
 

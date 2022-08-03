@@ -1,6 +1,6 @@
 # Introduction
 
-This project is started as a hobby and it's based on the [wwebjs](https://wwebjs.dev/) project. It exposes some WhatsApp functionalities over a Rest API.
+This project is based on the [wwebjs](https://wwebjs.dev/) project. It exposes some WhatsApp functionalities over a Rest API.
 
 # Deployment
 
@@ -22,3 +22,6 @@ This project is started as a hobby and it's based on the [wwebjs](https://wwebjs
 
 # Rest API Calls
 
+# Support
+
+I'm not a developper, just a hobbiest. Support is offered as best effort, and during my free time.

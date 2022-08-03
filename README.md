@@ -1,15 +1,15 @@
 # whatsapp-rest-api
 
-Introduction
+## Introduction
 
 This project is started as a hobby and it's based on the https://wwebjs.dev/ project. It exposes some WhatsApp functionalities over a Rest API.
 
-Docker build and run
+## Docker build and run
 
 sudo docker build -t whatsapp-rest-api . -f docker/Dockerfile
 sudo docker run -p 3000:3000 -d whatsapp-rest-api
 
-Installing outside docker
+## Deploying outside docker
 
 1. Clone the repository
 2. cd whatsapp-rest-api/

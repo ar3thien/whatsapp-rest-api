@@ -1,0 +1,10 @@
+# build
+sudo docker build -t whatsapp-rest-api . -f docker/Dockerfile
+
+# push to docker hub
+sudo docker image tag whatsapp-rest-api:latest ar3thien/whatsapp-rest-api:latest
+sudo docker image push ar3thien/whatsapp-rest-api:latest
+
+# push to ghrcr.io
+sudo docker image tag whatsapp-rest-api ghcr.io/ar3thien/whatsapp-rest-api:latest
+sudo docker push ghcr.io/ar3thien/whatsapp-rest-api:latest

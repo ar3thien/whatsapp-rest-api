@@ -18,3 +18,6 @@ RUN npm install
 EXPOSE 3000
 
 CMD [ "node", "index.js" ]
+
+#connect to github repo
+LABEL org.opencontainers.image.source https://github.com/ar3thien/whatsapp-rest-api

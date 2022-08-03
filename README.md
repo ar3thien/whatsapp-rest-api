@@ -3,7 +3,7 @@
 This project is based on the [wwebjs](https://wwebjs.dev/) project. It exposes some WhatsApp functionalities over a Rest API.
 
 
-## Features
+## Supported features
 
 | Feature  | Status |
 |-------------|-------------|
@@ -31,7 +31,7 @@ _a docker image may be made available in the future_
 4. `npm run-script build`
 5. `npm start`
 
-# Rest API Calls
+# Rest API calls
 
 # Support
 

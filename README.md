@@ -12,7 +12,7 @@ This project is started as a hobby and it's based on the [wwebjs](https://wwebjs
 4. `docker volume create whatsapp_conf`
 4. `docker run -p 3000:3000 -v whatsapp_conf:/usr/src/app -d --restart always whatsapp-rest-api`
 
-## Outside docker
+## Without docker
 
 1. `git clone https://github.com/ar3thien/whatsapp-rest-api.git`
 2. `cd whatsapp-rest-api/app`

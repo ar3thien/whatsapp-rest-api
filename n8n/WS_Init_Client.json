@@ -1,0 +1,200 @@
+{
+  "name": "WS Init Client",
+  "nodes": [
+    {
+      "parameters": {},
+      "name": "Start",
+      "type": "n8n-nodes-base.start",
+      "typeVersion": 1,
+      "position": [
+        180,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "url": "http://<host-ip>:3000/ClientState",
+        "options": {}
+      },
+      "name": "Get ClientState",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        380,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "url": "http://<host-ip>:3000/LastQR",
+        "options": {}
+      },
+      "name": "Get QR Text",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        800,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://api.qrserver.com/v1/create-qr-code/",
+        "responseFormat": "file",
+        "options": {},
+        "queryParametersUi": {
+          "parameter": [
+            {
+              "name": "data",
+              "value": "={{$node[\"Get QR Text\"].json[\"msg\"]}}"
+            }
+          ]
+        }
+      },
+      "name": "Convert QR To Image",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        1200,
+        180
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{$node[\"Get ClientState\"].json[\"msg\"]}}",
+              "operation": "notEqual",
+              "value2": "CONNECTED"
+            }
+          ]
+        }
+      },
+      "name": "If Not Connected",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        580,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "amount": 5,
+        "unit": "seconds"
+      },
+      "name": "Wait",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1200,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{$node[\"Get QR Text\"].json[\"msg\"]}}",
+              "operation": "notContains",
+              "value2": "Process exiting to force re-initialize"
+            }
+          ]
+        }
+      },
+      "name": "If QR file not found",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        980,
+        200
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Start": {
+      "main": [
+        [
+          {
+            "node": "Get ClientState",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get ClientState": {
+      "main": [
+        [
+          {
+            "node": "If Not Connected",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get QR Text": {
+      "main": [
+        [
+          {
+            "node": "If QR file not found",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If Not Connected": {
+      "main": [
+        [
+          {
+            "node": "Get QR Text",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Get ClientState",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If QR file not found": {
+      "main": [
+        [
+          {
+            "node": "Convert QR To Image",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "saveExecutionProgress": "DEFAULT",
+    "executionTimeout": 300,
+    "errorWorkflow": "2"
+  },
+  "id": 30,
+  "tags": []
+}

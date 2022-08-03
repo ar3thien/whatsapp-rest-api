@@ -1,0 +1,124 @@
+{
+  "name": "WSSendMessage",
+  "nodes": [
+    {
+      "parameters": {},
+      "name": "Start",
+      "type": "n8n-nodes-base.start",
+      "typeVersion": 1,
+      "position": [
+        200,
+        220
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "requestMethod": "POST",
+        "url": "http://<host-ip>:3000/SendMessage",
+        "jsonParameters": true,
+        "options": {},
+        "bodyParametersJson": "={{$node[\"Webhook\"].json[\"body\"]}}"
+      },
+      "name": "Send Message",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        380,
+        440
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{$node[\"Send Message\"].json[\"msg\"]}}",
+              "operation": "notEqual",
+              "value2": "Client is not ready yet!"
+            }
+          ]
+        }
+      },
+      "name": "If Client not ready",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        560,
+        440
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "name": "Respond to Webhook",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [
+        800,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "SendMessage",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        200,
+        440
+      ],
+      "webhookId": "5c791c3a-a743-4a51-a3e8-d470efc6f0a0"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Send Message": {
+      "main": [
+        [
+          {
+            "node": "If Client not ready",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If Client not ready": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Send Message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "saveExecutionProgress": "DEFAULT",
+    "executionTimeout": 300,
+    "errorWorkflow": "2"
+  },
+  "id": 31,
+  "tags": []
+}

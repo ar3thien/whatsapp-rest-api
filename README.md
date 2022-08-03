@@ -2,11 +2,11 @@
 
 This project is based on the [wwebjs](https://wwebjs.dev/) project. It exposes some WhatsApp functionalities over a Rest API.
 
-| Feature           | Status  |
+| Feature | Status  |
 |-------------------|---|
-| Receive QR Code   |   |
-| Send Text Message |   |
-| Get Client State  |   |
+| Receive QR Code | ✅ |
+| Send Text Message | ✅ |
+| Get Client State |✅|
 
 # Deployment
 

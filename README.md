@@ -33,6 +33,8 @@ _a docker image may be made available in the future_
 
 # Rest API calls
 
+A document following the OpenAPI Specification (OAS) 3.0 is going to be available soon.
+
 # Support
 
 I'm not a developper, just a hobbiest. Support is offered as best effort, and during my free time which is very limited.

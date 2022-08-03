@@ -42,4 +42,4 @@ Because I use n8n in my homelab, you will find under the n8n folder some workflo
 
 # Support
 
-I'm not a developper, just a hobbiest. Support is offered as best effort, and during my free time which is very limited.
+I'm not a developper, just a hobbiest. This is developped for fun with no guarantees. Support is offered as best effort, and during my free time which is very limited.

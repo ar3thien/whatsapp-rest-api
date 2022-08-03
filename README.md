@@ -14,11 +14,11 @@ This project is started as a hobby and it's based on the [wwebjs](https://wwebjs
 
 ## Outside docker
 
-1. git clone https://github.com/ar3thien/whatsapp-rest-api.git
-2. cd whatsapp-rest-api/
-3. mv package-non-docker.json package.json
-4. npm install
-5. npm start
+1. `git clone https://github.com/ar3thien/whatsapp-rest-api.git`
+2. `cd whatsapp-rest-api/`
+3. `mv package-non-docker.json package.json`
+4. `npm install`
+5. `npm start`
 
 # Rest API Calls
 

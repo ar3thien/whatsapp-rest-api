@@ -21,7 +21,7 @@ This project is based on the [wwebjs](https://wwebjs.dev/) project. It exposes s
 4. `docker volume create whatsapp_conf`
 4. `docker run -p 3000:3000 -v whatsapp_conf:/usr/src/app -d --restart always whatsapp-rest-api`
 
-_a docker image may be made available in the future_
+_a docker image may be published in the future_
 
 ## Without docker
 

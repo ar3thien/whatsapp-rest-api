@@ -1,6 +1,6 @@
 # Introduction
 
-This project is started as a hobby and it's based on the https://wwebjs.dev/ project. It exposes some WhatsApp functionalities over a Rest API.
+This project is started as a hobby and it's based on the [wwebjs](https://wwebjs.dev/) project. It exposes some WhatsApp functionalities over a Rest API.
 
 # Docker build and run
 

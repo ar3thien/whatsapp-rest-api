@@ -24,4 +24,4 @@ This project is based on the [wwebjs](https://wwebjs.dev/) project. It exposes s
 
 # Support
 
-I'm not a developper, just a hobbiest. Support is offered as best effort, and during my free time.
+I'm not a developper, just a hobbiest. Support is offered as best effort, and during my free time which is very limited.

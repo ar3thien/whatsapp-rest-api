@@ -35,6 +35,11 @@ _A docker image may be published in the future_
 
 A document following the OpenAPI Specification (OAS) 3.0 is going to be available soon.
 
+# Orchestration
+
+You may use wrappers (ie, shell scripts) or external tools (ie. [n8n](https://n8n.io/), [nodered](https://nodered.org/)) to build your logic on top of the Restful API.
+Because I personally use n8n, you will find under the n8n folder some workflow samples.
+
 # Support
 
 I'm not a developper, just a hobbiest. Support is offered as best effort, and during my free time which is very limited.

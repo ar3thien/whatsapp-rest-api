@@ -119,17 +119,18 @@ client.on("ready", () => {
 });
 
 client.on("auth_failure", () => {
-  console.log("AUTH Failed !");
+  console.log("Authentication Failed, exiting");
   process.exit();
 });
 
 client.on("change_state", (reason) => {
-  console.log("change_state Failed: " + reason );
+  console.log("State change detected: " + reason );
   //process.exit();
 });
 
 client.on("disconnected", (reason) => {
-  console.log("Client is disconnected, cleaning the session directory, and exiting");
+  console.log("Client is disconnected: " + reason);
+  console.log("Cleaning the session directory, and exiting");
   fse.removeSync(WS_SESSION_DIR);
   process.exit();
 });

@@ -17,7 +17,7 @@ This project is started as a hobby and it's based on the [wwebjs](https://wwebjs
 1. `git clone https://github.com/ar3thien/whatsapp-rest-api.git`
 2. `cd whatsapp-rest-api/app`
 3. `mv package-non-docker.json package.json`
-4. `npm install`
+4. `npm run-script build`
 5. `npm start`
 
 # Rest API Calls
